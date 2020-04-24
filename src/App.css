@@ -1,0 +1,96 @@
+body {
+  background:#f3f3f3;
+}
+
+img {
+  width: 300px;
+  height: 180px;
+  vertical-align: middle;
+}
+
+a {
+  color: #e74c3c !important;
+}
+
+button:focus {
+  outline: none;
+}
+
+.App {
+  text-align: left;
+}
+
+.App-header {
+  background-color: #2c3e50;
+  height: 150px;
+  padding: 30px;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.App-title {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.Partner-intro{
+  text-align: left;
+}
+
+.Partners-inlude{
+  text-align: left;
+  font-size: 1.0em; 
+}
+
+
+.partners_buttons {
+  border: solid 2px #e74c3c;
+  background: transparent;
+  padding: 0.4rem 0.6rem;
+  margin: 0 0.2rem;
+  border-radius: 1px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-left: 0.7rem;
+}
+
+.partners__box {
+  height: 225px;
+  width: 300px;
+  background:#f3f3f3;     /* #fff; #f3f3f3*/
+  padding-bottom: 2rem;
+  border-radius: 5px;
+  box-shadow: -1px 2px 34px -13px rgba(0,0,0,0.75);
+  text-align: left;
+  overflow: hidden;
+  
+}
+
+.partners__text {
+  margin-left: 15px;
+}
+
+.partners__title {
+  color: #e74c3c;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding-top: 5px;
+  /*padding: 1.0rem 0 0.2rem 0;*/
+}
+
+.partners__subtitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.partners__subtitle span {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+}
+
