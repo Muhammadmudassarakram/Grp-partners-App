@@ -16,8 +16,8 @@ const Partners = props => (
                   { partner.partnerName.length < 20 ? `${partner.partnerName}` : `${partner.partnerName.substring(0, 100)}` }
                   {console.log(partner.partnerName.length)}
                 </h5>
-                <p className="partners__subtitle">Region:<span>
-                  { partner.contienent }
+                <p className="partners__subtitle">Region is<span>
+                  { partner.continent }, working Region is {partner.workingRegion} and Type {partner.type}
                 </span></p>
               </div>
               
