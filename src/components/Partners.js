@@ -14,7 +14,7 @@ const Partners = props => (
               <div className="partners__text">
                 <h5 className="partners__title">
                   { partner.partnerName.length < 20 ? `${partner.partnerName}` : `${partner.partnerName.substring(0, 100)}` }
-                  {console.log(partner.partnerName.length)}
+                  
                 </h5>
                 <p className="partners__subtitle">Region is<span>
                   { partner.continent }, working Region is {partner.workingRegion} and Type {partner.type}
@@ -30,3 +30,5 @@ const Partners = props => (
 );
 
 export default Partners;
+
+//{console.log(partner.partnerName.length)}

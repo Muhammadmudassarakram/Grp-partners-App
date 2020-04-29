@@ -4,7 +4,7 @@ import axios from 'axios';
 //import ReactDOM from 'react-dom';
 import './App.css';
 import Partners from "./components/Partners";
-import Form from "./components/Form";
+import SearchForm from "./components/SearchForm";
 class showAllPartners extends Component {
 
   constructor(props) {
@@ -41,8 +41,9 @@ class showAllPartners extends Component {
           <p className="Partners-intro">Partners are organisations active in resilience who 
             share GRP’s vision and objective and who have joined the Partnership.</p>
             <h2 className="Partners-inlude"> Current partners include:</h2>
-            <Form partners={this.state.partners} onSelectChange={this.handleSelectChange} />
+           
         </header>
+        <SearchForm/>
         
         <Partners partners={this.state.partners} />
       </div>
