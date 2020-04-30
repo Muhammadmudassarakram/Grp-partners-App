@@ -43,9 +43,10 @@ class showAllPartners extends Component {
             <h2 className="Partners-inlude"> Current partners include:</h2>
            
         </header>
+        
         <SearchForm/>
         
-        <Partners partners={this.state.partners} />
+      
       </div>
     );
   }

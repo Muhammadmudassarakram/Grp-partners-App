@@ -69,7 +69,7 @@ class SearchForm extends Component {
        const filterDropdown1 = partners1.filter(function(result) {
           return result.theme === theme;
         });
-  
+              if (this.state.continent || this.state.theme)
       return (
     
            <form >
@@ -163,6 +163,71 @@ class SearchForm extends Component {
        
         </form>
         
+  );
+
+  else if(this.state.partners)
+  return(<form >
+          
+    <div className="Search-filter">
+        <div>
+       Search by continent
+       <select
+         value={this.state.continent}
+         onChange={this.handleChange}
+       >
+         <option value=''>Select Continent</option>
+         {uniqueContinent.map(continent => (
+           <option key={continent.partnerId} value={continent.continent}>
+             {continent.continent}
+           </option>
+         ))}
+       </select>
+       </div>
+      <div>
+       Search by theme
+       <select
+         value={this.state.theme}
+         onChange={this.handleChange}
+       >
+         <option value=''>Select Theme</option>
+         {uniqueTheme.map(theme => (
+           <option key={theme.partnerId} value={theme.theme}>
+             {theme.theme}
+           </option>
+         ))}
+       </select>
+       </div>
+       </div>
+     
+       
+<div className="container">
+<div className="row">
+{ partners.map(partner => 
+(
+ <div key={partner.partnerId} className="col-md-4" style={{ marginBottom:"2rem" }}>
+   <div className="partners__box">
+     <img 
+       className="partners__box-img" 
+       src={partner.logo} 
+       alt={partner.partnerName}/>
+       <div className="partners__text">
+         <h5 className="partners__title">
+           { partner.partnerName.length < 20 ? `${partner.partnerName}` : `${partner.partnerName.substring(0, 100)}` }
+           
+         </h5>
+         <p className="partners__subtitle">Region is<span>
+           { partner.continent }, working Region is {partner.workingRegion} and Type {partner.type}
+         </span></p>
+       </div>
+       
+   </div>
+ </div>
+)
+)}
+</div>
+</div> 
+</form>  
+
   );
               
     }
