@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
 import axios from 'axios';
 
-class SearchForm extends Component {
+
+class DynamicSelect extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -31,7 +31,18 @@ class SearchForm extends Component {
   
       return unique;
     }
-      componentDidMount() {
+
+    /*
+    componentDidMount(){
+    this.setState({
+        partners: this.props.partners
+      });
+    }
+      */
+    
+     
+
+    componentDidMount() {
         axios.get('./data.json')
         .then((response) => {
           const arr = response.data;
@@ -63,7 +74,7 @@ class SearchForm extends Component {
        const filterDropdown1 = partners1.filter(function(result) {
           return result.theme === theme;
         });
-              if (this.state.continent || this.state.theme)
+  
       return (
     
            <form >
@@ -113,22 +124,12 @@ class SearchForm extends Component {
               <div className="partners__text">
                 <h5 className="partners__title">
                   { continent.partnerName.length < 20 ? `${continent.partnerName}` : `${continent.partnerName.substring(0, 100)}` }
-                  
+                  {console.log(continent.partnerName.length)}
                 </h5>
                 <p className="partners__subtitle">Region is<span>
                   { continent.continent }, working Region is {continent.workingRegion} and Type {continent.type}
                 </span></p>
               </div>
-
-              <button className="recipe_buttons">
-               
-                <Link to={{ 
-                  pathname: `/partner/${continent.partnerId}`,
-                  state: { partner: continent.partnerName },
-                  
-                }}>View details</Link>
-
-              </button>  
               
           </div>
         </div>
@@ -158,16 +159,6 @@ class SearchForm extends Component {
                 </span></p>
               </div>
               
-              <button className="recipe_buttons">
-               
-               <Link to={{ 
-                 pathname: `/partner/${theme.partnerId}`,
-                 state: { partner: theme.partnerName },
-                 
-               }}>View details</Link>
-
-             </button>  
-
           </div>
         </div>
       )
@@ -178,87 +169,12 @@ class SearchForm extends Component {
         </form>
         
   );
-
-  else if(this.state.partners)
-  return(<form >
-          
-    <div className="Search-filter">
-        <div>
-       Search by continent
-       <select
-         value={this.state.continent}
-         onChange={this.handleChange}
-       >
-         <option value=''>Select Continent</option>
-         {uniqueContinent.map(continent => (
-           <option key={continent.partnerId} value={continent.continent}>
-             {continent.continent}
-           </option>
-         ))}
-       </select>
-       </div>
-      <div>
-       Search by theme
-       <select
-         value={this.state.theme}
-         onChange={this.handleChange}
-       >
-         <option value=''>Select Theme</option>
-         {uniqueTheme.map(theme => (
-           <option key={theme.partnerId} value={theme.theme}>
-             {theme.theme}
-           </option>
-         ))}
-       </select>
-       </div>
-       </div>
-     
-       
-<div className="container">
-<div className="row">
-{ partners.map(partner => 
-(
- <div key={partner.partnerId} className="col-md-4" style={{ marginBottom:"2rem" }}>
-   <div className="partners__box">
-     <img 
-       className="partners__box-img" 
-       src={partner.logo} 
-       alt={partner.partnerName}/>
-       <div className="partners__text">
-         <h5 className="partners__title">
-           { partner.partnerName.length < 20 ? `${partner.partnerName}` : `${partner.partnerName.substring(0, 100)}` }
-           
-         </h5>
-         <p className="partners__subtitle">Region is<span>
-           { partner.continent }, working Region is {partner.workingRegion} and Type {partner.type}
-         </span></p>
-       </div>
-
-       <button className="recipe_buttons">
-               
-                <Link to={{ 
-                  pathname: `/partner/${partner.partnerId}`,
-                  state: { partner: partner.partnerName },
-                  
-                }}>View details</Link>
-
-              </button>  
-       
-   </div>
- </div>
-)
-)}
-</div>
-</div> 
-</form>  
-
-  );
               
     }
               
     
   }
-  export default SearchForm;
+  export default DynamicSelect;
   
  // ReactDOM.render(<DynamicSelect />, document.querySelector("#root"));
 

@@ -56,7 +56,7 @@ button:focus {
 }
 
 .partners__box {
-  height: 260px;
+  height: 225px;
   width: 300px;
   background:#f3f3f3;     /* #fff; #f3f3f3*/
   padding-bottom: 2rem;
@@ -124,38 +124,37 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #2c3e50 !important;
 }
 
-/******** activePartner.js ********/
+/******** RECIPE.js ********/
 
-.active-partner {
+.active-recipe {
   margin: 0 auto;
   width: 60%;
 }
 
-.active-partner__img {
-  height: auto !important;
-  width: 75%;
+.active-recipe__img {
+  height: 500px !important;
 }
 
-.active-partner__title {
+.active-recipe__title {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 1rem 0;
 }
 
-.active-partner__details, .active-partner__website {
+.active-recipe__publisher, .active-recipe__website {
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.active-partner__details span {
+.active-recipe__publisher span {
   text-transform: none;
   font-weight: 300;
   letter-spacing: 2px;
   margin-left: 5px;
 }
 
-.active-partner__website span {
+.active-recipe__website span {
   text-transform: lowercase;
   font-weight: 300;
   letter-spacing: 2px;
@@ -163,7 +162,7 @@ input:-webkit-autofill {
   margin-left: 10px;
 }
 
-.active-partner__button {
+.active-recipe__button {
   border: solid 2px #e74c3c;
   background: transparent;
   padding: 0.2rem 0.9rem;
@@ -179,16 +178,4 @@ input:-webkit-autofill {
   align-items: center;
   font-family: touse;
   padding: 5px;
-}
-
-.partner_buttons {
-  border: solid 2px #e74c3c;
-  background: transparent;
-  padding: 0.4rem 0.6rem;
-  margin: 0 0.2rem;
-  border-radius: 1px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  margin-left: 0.7rem;
 }
